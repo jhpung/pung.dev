@@ -6,7 +6,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeToc from "rehype-toc";
 import rehypePrettyCode from "rehype-pretty-code";
 import mdxMermaid from "mdx-mermaid";
-import { Mermaid } from "mdx-mermaid/lib/Mermaid";
+import { Mermaid } from "mdx-mermaid/Mermaid";
 
 interface PostViewProps {
   post: Post;
