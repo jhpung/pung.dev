@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-black: theme(colors.gray.900);
+  --color-white: theme(colors.gray.100);
+
+  --primary: theme(colors.primary);
+  --secondary: theme(colors.secondary);
+
+  --background: var(--color-white);
+  --foreground: var(--color-black);
+}
+
+.dark {
+  --background: var(--color-black);
+  --foreground: var(--color-white);
+}
+
+@layer base {
+  body {
+    color: var(--foreground);
+    background: var(--background);
+  }
+}
