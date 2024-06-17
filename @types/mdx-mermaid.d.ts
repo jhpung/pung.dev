@@ -5,5 +5,5 @@ declare module "mdx-mermaid" {
 }
 
 declare module "mdx-mermaid/Mermaid" {
-  declare function Mermaid();
+  declare function Mermaid(props);
 }
