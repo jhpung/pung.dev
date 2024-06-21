@@ -9,7 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const postUrls = posts.map(
     (post) =>
       ({
-        url: `https://www.pung.dev/posts/${encodeURIComponent(post.slug)}`,
+        url: `https://www.pung.dev/posts/${post.slug}`,
         lastModified: new Date(),
         changeFrequency: "monthly",
         priority: 0.7,
@@ -19,7 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const noteUrls = notes.map(
     (note) =>
       ({
-        url: `https://www.pung.dev/notes/${encodeURIComponent(note.slug)}`,
+        url: `https://www.pung.dev/notes/${note.slug}`,
         lastModified: new Date(),
         changeFrequency: "monthly",
         priority: 0.7,
