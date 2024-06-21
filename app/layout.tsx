@@ -14,6 +14,11 @@ const pretendard = font({
 export const metadata: Metadata = {
   title: "pung.dev",
   description: "개발 관련 지식, 경험들을 정리해두고 있습니다.",
+  openGraph: {
+    title: "pung.dev",
+    description: "개발 관련 지식, 경험들을 정리해두고 있습니다.",
+    emails: "jhpung.dev@gmail.com",
+  },
 };
 
 export default function RootLayout({
