@@ -6,52 +6,52 @@ import { z } from "zod";
 import readingTime from "reading-time";
 import { isExists } from "./util";
 
-const ROOT_PATH = path.join(process.cwd(), "/posts");
+const ROOT_PATH = path.join(process.cwd(), "/notes");
 
-const PostMatter = z.object({
+const NoteMatter = z.object({
   title: z.string(),
   description: z.string(),
   tags: z.array(z.string()).nullish(),
-  series: z.string().nullish(),
+  category: z.string(),
   draft: z.boolean().default(true).nullish(),
   date: z.coerce.date(),
   thumbnail: z.string().nullish(),
 });
 
-const Post = PostMatter.extend({
+const Note = NoteMatter.extend({
   content: z.string(),
   minutes: z.number(),
   slug: z.string(),
 });
 
-export type PostMatter = z.infer<typeof PostMatter>;
-export type Post = z.infer<typeof Post>;
+export type NoteMatter = z.infer<typeof NoteMatter>;
+export type Note = z.infer<typeof Note>;
 
-export async function fetchPosts() {
+export async function fetchNotes() {
   const paths = globSync(`${ROOT_PATH}/**/*.mdx`);
 
-  return paths.map(parsePost).filter(isExists);
+  return paths.map(parseNote).filter(isExists);
 }
 
-export function parsePost(path: string) {
+export function parseNote(path: string) {
   try {
     const file = readFileSync(path);
 
     const { content, data } = grayMatter(file);
 
-    const postMatter = PostMatter.parse(data);
+    const noteMatter = NoteMatter.parse(data);
 
-    if (postMatter.draft) {
+    if (noteMatter.draft) {
       return null;
     }
-    const post = Post.parse({
-      ...postMatter,
+    const Node = Note.parse({
+      ...noteMatter,
       content,
       slug: path.split("/").at(-1)?.replace(".mdx", ""),
       minutes: readingTime(content).minutes,
     });
 
-    return post;
+    return Node;
   } catch (err: unknown) {
     console.error(err);
     return null;

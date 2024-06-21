@@ -1,27 +1,27 @@
-import { fetchPosts } from "@/lib/post";
-import Link from "next/link";
+import { fetchNotes } from "@/lib/note";
 import dayjs from "dayjs";
-import clsx from "clsx";
+import Link from "next/link";
 
-export default async function PostsPage() {
-  const posts = await fetchPosts();
+export default async function NotesPage() {
+  const notes = await fetchNotes();
+
   return (
     <main className="max-w-screen-md mx-auto p-5">
       <section>
-        <h1>Posts</h1>
-        <p>경험을 정리하여 기록합니다.</p>
+        <h1>Notes</h1>
+        <p>학습한 지식을 정리해놓는 공간입니다.</p>
         <div className="flex flex-col gap-y-4">
-          {posts
+          {notes
             .sort((a, b) => (a.date > b.date ? -1 : 1))
-            .map((post) => (
-              <Link key={`post-item-${post.slug}`} href={`/posts/${post.slug}`}>
+            .map((note) => (
+              <Link key={`note-item-${note.slug}`} href={`/notes/${note.slug}`}>
                 <section className="not-prose flex flex-col">
-                  <h2 className="text-2xl mb-2">{post.title}</h2>
+                  <h2 className="text-2xl mb-2">{note.title}</h2>
                   <p className="text-base mb-2 font-light text-gray-700">
-                    {post.description}
+                    {note.description}
                   </p>
                   <p className="text-sm font-light text-gray-500">
-                    {dayjs(post.date).format("YYYY. MM. DD")}
+                    {dayjs(note.date).format("YYYY. MM. DD")}
                   </p>
                 </section>
               </Link>

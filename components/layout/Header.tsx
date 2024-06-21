@@ -12,7 +12,7 @@ export default function Header(props: Props) {
             pung.dev
           </Link>
           <Link href={"/posts"}>posts</Link>
-          <Link href={"/memories"}>memories</Link>
+          <Link href={"/notes"}>notes</Link>
         </nav>
         <ThemeSwitch />
       </div>
