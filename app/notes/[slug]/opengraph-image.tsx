@@ -2,7 +2,7 @@ import { fetchNotes } from "@/lib/note";
 import { ImageResponse } from "next/og";
 
 // Route segment config
-export const runtime = "edge";
+export const runtime = "node";
 
 // Image metadata
 export const alt = "pung.dev";
