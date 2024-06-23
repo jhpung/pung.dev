@@ -15,6 +15,8 @@ const config: Config = {
       colors: {
         primary: colors.blue[600],
         secondary: colors.yellow[500],
+        black: colors.gray[900],
+        white: colors.gray[100],
       },
       keyframes: {
         up: {

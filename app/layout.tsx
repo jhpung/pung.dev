@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="ko" suppressHydrationWarning>
       <body
-        className={`${pretendard.className} min-h-screen prose dark:prose-invert dark:prose-a:text-white prose-a:no-underline hover:prose-a:text-primary dark:hover:prose-a:text-primary w-full max-w-full`}
+        className={`${pretendard.className} min-h-screen prose dark:prose-invert prose-a:text-primary hover:prose-a:underline prose-a:no-underline hover:prose-a:text-primary w-full max-w-full relative`}
       >
         <ThemeProvider>
           <Header />
