@@ -6,8 +6,8 @@ export const runtime = "edge";
 // Image metadata
 export const alt = "pung.dev";
 export const size = {
-  width: 600,
-  height: 315,
+  width: 300,
+  height: 150,
 };
 
 export const contentType = "image/png";
@@ -43,7 +43,7 @@ export default async function Image() {
       ...size,
       fonts: [
         {
-          name: "Inter",
+          name: "Pretendard",
           data: await pretendard,
           style: "normal",
           weight: 400,
