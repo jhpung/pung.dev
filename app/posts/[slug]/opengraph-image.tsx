@@ -18,7 +18,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
   const posts = await fetchPosts();
 
   const post = posts.find(
-    (post) => decodeURIComponent(post.slug) === params.slug
+    (post) => post.slug === decodeURIComponent(params.slug)
   );
 
   return new ImageResponse(

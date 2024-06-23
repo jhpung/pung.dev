@@ -18,7 +18,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
   const notes = await fetchNotes();
 
   const note = notes.find(
-    (note) => decodeURIComponent(note.slug) === params.slug
+    (note) => note.slug === decodeURIComponent(params.slug)
   );
 
   return new ImageResponse(
