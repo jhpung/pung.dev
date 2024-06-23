@@ -6,8 +6,8 @@ export const runtime = "edge";
 // Image metadata
 export const alt = "pung.dev";
 export const size = {
-  width: 300,
-  height: 150,
+  width: 1200,
+  height: 630,
 };
 
 export const contentType = "image/jpg";
