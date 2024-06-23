@@ -3,7 +3,6 @@ import font from "next/font/local";
 import "./globals.scss";
 import ThemeProvider from "@/components/theme/ThemeProvider";
 import Header from "@/components/layout/Header";
-import { Analytics } from "@vercel/analytics/react";
 
 const pretendard = font({
   src: "../public/static/fonts/PretendardVariable.woff2",
@@ -35,7 +34,6 @@ export default function RootLayout({
         <ThemeProvider>
           <Header />
           {children}
-          <Analytics />
         </ThemeProvider>
       </body>
     </html>
