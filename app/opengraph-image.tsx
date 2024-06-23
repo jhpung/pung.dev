@@ -41,14 +41,14 @@ export default async function Image() {
       // For convenience, we can re-use the exported opengraph-image
       // size config to also set the ImageResponse's width and height.
       ...size,
-      fonts: [
-        {
-          name: "Pretendard",
-          data: await pretendard,
-          style: "normal",
-          weight: 400,
-        },
-      ],
+      // fonts: [
+      //   {
+      //     name: "Pretendard",
+      //     data: await pretendard,
+      //     style: "normal",
+      //     weight: 400,
+      //   },
+      // ],
     }
   );
 }
