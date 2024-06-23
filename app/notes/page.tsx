@@ -1,6 +1,12 @@
 import { fetchNotes } from "@/lib/note";
 import dayjs from "dayjs";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Notes",
+  description: "학습한 지식을 가볍게 정리해놓는 공간입니다.",
+};
 
 export default async function NotesPage() {
   const notes = await fetchNotes();
@@ -9,7 +15,7 @@ export default async function NotesPage() {
     <main className="max-w-screen-md mx-auto p-5">
       <section>
         <h1>Notes</h1>
-        <p>학습한 지식을 정리해놓는 공간입니다.</p>
+        <p>학습한 지식을 가볍게 정리해놓는 공간입니다.</p>
         <div className="flex flex-col gap-y-4">
           {notes
             .sort((a, b) => (a.date > b.date ? -1 : 1))

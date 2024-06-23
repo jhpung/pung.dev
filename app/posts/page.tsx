@@ -1,7 +1,12 @@
 import { fetchPosts } from "@/lib/post";
 import Link from "next/link";
 import dayjs from "dayjs";
-import clsx from "clsx";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Posts",
+  description: "경험을 정리하여 기록한 공간입니다.",
+};
 
 export default async function PostsPage() {
   const posts = await fetchPosts();
@@ -9,7 +14,7 @@ export default async function PostsPage() {
     <main className="max-w-screen-md mx-auto p-5">
       <section>
         <h1>Posts</h1>
-        <p>경험을 정리하여 기록합니다.</p>
+        <p>경험을 정리하여 기록한 공간입니다.</p>
         <div className="flex flex-col gap-y-4">
           {posts
             .sort((a, b) => (a.date > b.date ? -1 : 1))
