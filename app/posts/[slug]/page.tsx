@@ -12,7 +12,7 @@ export async function generateMetadata(
   { params, searchParams }: Props,
   parent: ResolvingMetadata
 ) {
-  const slug = params.slug;
+  const slug = decodeURIComponent(params.slug);
   const posts = await fetchPosts();
   const post = posts.find((post) => post.slug === slug);
   const p = await parent;
