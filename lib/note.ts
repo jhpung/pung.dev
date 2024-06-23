@@ -48,7 +48,7 @@ export function parseNote(path: string) {
       ...noteMatter,
       content,
       slug: path.split("/").at(-1)?.replace(".mdx", ""),
-      minutes: readingTime(content).minutes,
+      minutes: Math.ceil(readingTime(content).minutes),
     });
 
     return Node;

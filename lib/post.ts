@@ -48,7 +48,7 @@ export function parsePost(path: string) {
       ...postMatter,
       content,
       slug: path.split("/").at(-1)?.replace(".mdx", ""),
-      minutes: readingTime(content).minutes,
+      minutes: Math.ceil(readingTime(content).minutes),
     });
 
     return post;
