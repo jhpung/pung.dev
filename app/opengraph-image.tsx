@@ -14,11 +14,6 @@ export const contentType = "image/jpg";
 
 // Image generation
 export default async function Image() {
-  // Font
-  const pretendard = fetch(
-    new URL("../public/static/fonts/PretendardVariable.woff2", import.meta.url)
-  ).then((res) => res.arrayBuffer());
-
   return new ImageResponse(
     (
       // ImageResponse JSX element
