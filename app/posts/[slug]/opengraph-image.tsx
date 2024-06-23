@@ -2,7 +2,7 @@ import { fetchPosts } from "@/lib/post";
 import { ImageResponse } from "next/og";
 
 // Route segment config
-export const runtime = "node";
+export const runtime = "nodejs";
 
 // Image metadata
 export const alt = "pung.dev";
